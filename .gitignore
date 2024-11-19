@@ -16,3 +16,12 @@ dist/
 # Ignoruj pliki konfiguracji IDE
 .vscode/
 .idea/
+
+# Ignorowanie plików o zbyt długich ścieżkach w Android build
+pike/android/app/.cxx/Debug/*
+
+# Ignorowanie wszystkich plików w folderze .cxx
+pike/android/app/.cxx/*
+
+# Ignorowanie plików .o
+pike/android/app/.cxx/**/*.o
