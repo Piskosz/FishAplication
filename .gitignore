@@ -1,0 +1,18 @@
+ECHO is on.
+# Ignoruj katalog node_modules
+node_modules/
+
+# Ignoruj pliki tymczasowe systemu Windows
+Thumbs.db
+desktop.ini
+
+# Ignoruj pliki logów
+*.log
+
+# Ignoruj folder build/ lub dist/
+build/
+dist/
+
+# Ignoruj pliki konfiguracji IDE
+.vscode/
+.idea/
