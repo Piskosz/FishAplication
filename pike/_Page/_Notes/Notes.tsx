@@ -1,41 +1,120 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { View, Text, TextInput, TouchableOpacity, FlatList, StyleSheet, ImageBackground } from 'react-native';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+interface Note {
+  id: string;
+  userId: string;
+  content: string;
+}
 
 const Notes = () => {
-  const [notes, setNotes] = useState<string[]>([]);
+  const [notes, setNotes] = useState<Note[]>([]);
   const [noteText, setNoteText] = useState('');
+  const [userId, setUserId] = useState('');
 
-  const addNote = () => {
+  useEffect(() => {
+    const fetchUserIdAndNotes = async () => {
+      try {
+        const storedUserId = await AsyncStorage.getItem('userId');
+        if (storedUserId) {
+          setUserId(storedUserId);
+          const response = await fetch(`http://172.28.16.1:8080/notes/user/${storedUserId}`);
+          const data: Note[] = await response.json();
+          setNotes(data);
+        }
+      } catch (error) {
+        console.error('Error fetching notes:', error);
+      }
+    };
+    fetchUserIdAndNotes();
+  }, []); // Tylko raz przy pierwszym renderze
+
+  const addNote = async () => {
     if (noteText.trim()) {
-      setNotes([...notes, noteText.trim()]);
-      setNoteText('');
+      const newNote = {
+        userId,
+        content: noteText.trim(),
+      };
+
+      try {
+        const response = await fetch('http://172.28.16.1:8080/notes/add', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(newNote),
+        });
+
+        if (response.ok) {
+          const savedNote: Note = await response.json();
+          // Dodanie nowej notatki na początek listy
+          setNotes([savedNote, ...notes]);
+          setNoteText('');
+          // Odświeżenie notatek po dodaniu
+          refreshNotes();
+        } else {
+          const errorResponse = await response.json();
+          console.error('Failed to add note:', errorResponse.message);
+        }
+      } catch (error)        {
+        console.error('Error adding note:', error);
+      }
+    }
+  };
+
+  // Funkcja do odświeżania notatek
+  const refreshNotes = async () => {
+    try {
+      const response = await fetch(`http://172.28.16.1:8080/notes/user/${userId}`);
+      const data: Note[] = await response.json();
+      setNotes(data); // Aktualizuje listę notatek
+    } catch (error) {
+      console.error('Error refreshing notes:', error);
+    }
+  };
+
+  // Funkcja usuwania notatki
+  const deleteNote = async (id: string) => {
+    try {
+      const response = await fetch(`http://172.28.16.1:8080/notes/${id}`, {
+        method: 'DELETE',
+      });
+
+      if (response.ok) {
+        // Po usunięciu notatki, filtrujemy ją z listy
+        setNotes((prevNotes) => prevNotes.filter((note) => note.id !== id));
+      } else {
+        const errorResponse = await response.json();
+        console.error('Failed to delete note:', errorResponse.message);
+      }
+    } catch (error) {
+      console.error('Error deleting note:', error);
     }
   };
 
   return (
-    <ImageBackground
-      source={require('./ryba2.jpg')}
-      style={styles.background}
-    >
+    <ImageBackground source={require('./ryba2.jpg')} style={styles.background}>
       <View style={styles.container}>
-        {/* Nagłówek */}
         <View style={styles.headerContainer}>
           <Text style={styles.headerText}>NOTATKI</Text>
         </View>
 
-        {/* Lista notatek */}
         <FlatList
           data={notes}
-          renderItem={({ item, index }) => (
-            <View style={styles.noteItem} key={index}>
-              <Text style={styles.noteText}>{item}</Text>
+          renderItem={({ item }) => (
+            <View style={styles.noteItem}>
+              <Text style={styles.noteText}>{item.content}</Text>
+              <TouchableOpacity
+                style={styles.deleteButton}
+                onPress={() => deleteNote(item.id)}
+              >
+                <Text style={styles.deleteButtonText}>Usuń</Text>
+              </TouchableOpacity>
             </View>
           )}
-          keyExtractor={(item, index) => index.toString()}
+          keyExtractor={(item) => `${item.id}-${item.userId}`} // Zapewnia unikalność klucza
           contentContainerStyle={styles.notesList}
         />
 
-        {/* Pole tekstowe i przycisk */}
         <View style={styles.inputContainer}>
           <TextInput
             placeholder="Wpisz notatkę"
@@ -122,6 +201,19 @@ const styles = StyleSheet.create({
   addButtonText: {
     color: 'white',
     fontSize: 16,
+    fontWeight: 'bold',
+  },
+  deleteButton: {
+    backgroundColor: '#FF5722',
+    paddingVertical: 8,
+    paddingHorizontal: 16,
+    borderRadius: 8,
+    alignItems: 'center',
+    marginTop: 10,
+  },
+  deleteButtonText: {
+    color: 'white',
+    fontSize: 14,
     fontWeight: 'bold',
   },
 });
