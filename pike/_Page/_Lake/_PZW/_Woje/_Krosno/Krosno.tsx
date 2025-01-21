@@ -96,8 +96,6 @@ const Krosno = () => {
         >
           <Text style={styles.linkText}>Strona główna Okręgu Krosno</Text>
         </TouchableOpacity>
-
-        <Text style={styles.subtitle}>Łowiska w okręgu Krosno:</Text>
         {waters.map((water, index) => (
           <View key={index} style={styles.infoBox}>
             <Text style={styles.infoText}>

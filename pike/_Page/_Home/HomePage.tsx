@@ -42,10 +42,6 @@ const HomePage = ({ navigation }) => {
 
         <View style={styles.buttonContainer}>
           <View style={styles.iconRow}>
-            <TouchableOpacity style={styles.iconButton} onPress={() => navigation.navigate('Home')}>
-              <Icon name="home" size={40} color="white" />
-              <Text style={styles.iconText}>Strona Główna </Text>
-            </TouchableOpacity>
             <TouchableOpacity style={styles.iconButton} onPress={() => navigation.navigate('Wetter')}>
               <Icon name="cloud" size={40} color="white" />
               <Text style={styles.iconText}>Pogoda</Text>
@@ -60,10 +56,6 @@ const HomePage = ({ navigation }) => {
             <TouchableOpacity style={styles.iconButton} onPress={() => navigation.navigate('Notes')}>
               <Icon name="sticky-note" size={40} color="white" />
               <Text style={styles.iconText}>Notatki</Text>
-            </TouchableOpacity>
-            <TouchableOpacity style={styles.iconButton} onPress={() => navigation.navigate('Profile')}>
-              <Icon name="user" size={40} color="white" />
-              <Text style={styles.iconText}>Profil</Text>
             </TouchableOpacity>
             <TouchableOpacity style={styles.iconButton} onPress={() => navigation.navigate('WaterType')}>
               <Icon name="map" size={40} color="white" />
@@ -112,10 +104,10 @@ const styles = StyleSheet.create({
     marginTop: 20,
   },
   iconButton: {
-    backgroundColor: 'rgba(0, 0, 255, 0.2)',
+    backgroundColor: 'rgba(0, 0, 255, 0.5)', // Zmniejszenie przezroczystości na 50%
     borderRadius: 50,
-    width: 100,
-    height: 100,
+    width: 120,
+    height: 120,
     alignItems: 'center',
     justifyContent: 'center',
     marginHorizontal: 15,
@@ -129,7 +121,7 @@ const styles = StyleSheet.create({
   logoutButton: {
     backgroundColor: '#FF5722',
     padding: 15,
-    borderRadius: 5,
+    borderRadius: 15,
     marginTop: 20,
   },
   logoutButtonText: {

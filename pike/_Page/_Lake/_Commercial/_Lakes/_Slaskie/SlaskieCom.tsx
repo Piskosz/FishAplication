@@ -4,10 +4,10 @@ import { StackNavigationProp } from '@react-navigation/stack';
 
 // Typ nawigacji dla ekranu
 type RootStackParamList = {
-  Glamka: undefined;
-  Trzebiatki: undefined;
-  Szuwarek: undefined;
-  Czarda: undefined;
+  Praszczyki: undefined;
+  Harus: undefined;
+  NowaOchaby: undefined;
+  MalaOlza: undefined;
 };
 
 type SlaskieComProps = {
@@ -18,10 +18,10 @@ const SlaskieCom: React.FC<SlaskieComProps> = ({ navigation }) => {  // Użycie 
   const [selectedRegion, setSelectedRegion] = useState(null);
 
   const regions = [
-    { name: 'Łowisko Glamka', screen: 'Glamka' as keyof RootStackParamList },
-    { name: 'Łowisko Trzebiatki', screen: 'Trzebiatki' as keyof RootStackParamList },
-    { name: 'Łowisko Szuwarek', screen: 'Szuwarek' as keyof RootStackParamList },
-    { name: 'Łowisko Czarda', screen: 'Czarda' as keyof RootStackParamList },
+    { name: 'Łowisko Praszczyki', screen: 'Praszczyki' as keyof RootStackParamList },
+    { name: 'Łowisko Harus', screen: 'Harus' as keyof RootStackParamList },
+    { name: 'Łowisko Nowa Ochaby', screen: 'NowaOchaby' as keyof RootStackParamList },
+    { name: 'Łowisko MalaOlza', screen: 'MalaOlza' as keyof RootStackParamList },
   ];
   
   return (

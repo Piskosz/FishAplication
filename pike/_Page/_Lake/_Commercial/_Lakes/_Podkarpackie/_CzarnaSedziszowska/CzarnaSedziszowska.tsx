@@ -46,7 +46,7 @@ const CzarnaSedziszowska: React.FC<CzarnaProps> = ({ navigation }) => {
 
         <TouchableOpacity
           onPress={() => navigation.navigate('Map', {
-            initialLocation: { lat: 50.0415, lng: 21.9991 },
+            initialLocation: { lat: 50.137, lng: 21.758833 },
           })}
           style={styles.mapButton}
         >
@@ -94,7 +94,7 @@ const styles = StyleSheet.create({
   subtitle: {
     fontSize: 20,
     fontWeight: 'bold',
-    color: 'white',
+    color: 'black',
     marginBottom: 10,
   },
   infoBox: {

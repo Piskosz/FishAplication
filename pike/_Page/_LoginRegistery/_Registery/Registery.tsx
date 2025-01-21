@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, ImageBackground, TouchableOpacity, StyleSheet, Image } from 'react-native';
+import { View, Text, TextInput, ImageBackground, TouchableOpacity, StyleSheet } from 'react-native';
 import axios from 'axios';
 
 const Registry = ({ navigation }) => {
@@ -8,7 +8,6 @@ const Registry = ({ navigation }) => {
     password: '',
     mail: '',
   });
-  const [registrationSuccess, setRegistrationSuccess] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
 
   const handleInputChange = (name, value) => {
@@ -34,7 +33,7 @@ const Registry = ({ navigation }) => {
     }
 
     try {
-      const response = await axios.post(
+      await axios.post(
         'http://172.28.16.1:8080/Rejestracja/dodawanie/',
         [formData],
         {
@@ -43,9 +42,8 @@ const Registry = ({ navigation }) => {
           },
         }
       );
-      setRegistrationSuccess(true);
       setErrorMessage('');
-      navigation.navigate('Home');
+      navigation.navigate('Login'); // Przekierowanie do logowania
     } catch (error) {
       setErrorMessage('Wystąpił błąd podczas rejestracji. Spróbuj ponownie.');
     }
@@ -61,18 +59,12 @@ const Registry = ({ navigation }) => {
       style={styles.background}
     >
       <View style={styles.container}>
-        <View style={styles.headerContainer}>
-          <Text style={styles.headerText}>Rejestracja</Text>
-        </View>
-
-        {registrationSuccess && (
-          <Text style={styles.successMessage}>
-            Użytkownik zarejestrowany pomyślnie!
-          </Text>
-        )}
         {errorMessage !== '' && (
           <Text style={styles.errorMessage}>{errorMessage}</Text>
         )}
+        <View style={styles.headerContainer}>
+          <Text style={styles.headerText}>Rejestracja</Text>
+        </View>
         <View style={styles.formContainer}>
           <TextInput
             placeholder="Nazwa użytkownika"
@@ -122,7 +114,7 @@ const styles = StyleSheet.create({
   headerContainer: {
     width: '100%',
     padding: 20,
-    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
     borderTopLeftRadius: 10,
     borderTopRightRadius: 10,
     alignItems: 'center',
@@ -131,11 +123,6 @@ const styles = StyleSheet.create({
     fontSize: 28,
     color: '#f1f1f1',
     fontWeight: '600',
-  },
-  successMessage: {
-    color: 'green',
-    fontSize: 16,
-    marginBottom: 10,
   },
   errorMessage: {
     color: 'red',

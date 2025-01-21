@@ -37,7 +37,6 @@ const Tarnobrzeg = () => {
           <Text style={styles.linkText}>Strona główna Okręgu Tarnobrzeg</Text>
         </TouchableOpacity>
 
-        <Text style={styles.subtitle}>Zbiorniki wodne w okręgu Tarnobrzeg:</Text>
         {reservoirs.map((reservoir) => (
           <View key={reservoir.id} style={styles.infoBox}>
             <Text style={styles.infoText}>

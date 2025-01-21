@@ -41,10 +41,10 @@ const CommercialMaps: React.FC<Props> = ({ navigation }) => {
     { name: 'Podlaskie', screen: 'PodlaskieCom' },
     { name: 'Pomorskie', screen: 'PomorskieCom' },
     { name: 'Śląskie', screen: 'SlaskieCom' },
-    { name: 'Świętokrzyskie', screen: 'ŚwiętokrzyskieCom' },
-    { name: 'Warmińsko-Mazurskie', screen: 'Warmińsko-MazurskieCom' },
+    { name: 'Świętokrzyskie', screen: 'SwietokrzyskieCom' },
+    { name: 'Warmińsko-Mazurskie', screen: 'WarminskoMazurskieCom' },
     { name: 'Wielkopolskie', screen: 'WielkopolskieCom' },
-    { name: 'Zachodniopomorskie', screen: 'ZachodniopomorskieCom' },
+    { name: 'Zachodniopomorskie', screen: 'ZachodnioPomorskieCom' },
   ];
 
   return (

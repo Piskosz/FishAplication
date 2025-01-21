@@ -44,7 +44,6 @@ const Login: React.FC<Props> = ({ navigation }) => {
         await AsyncStorage.setItem('token', token);
         await AsyncStorage.setItem('userId', String(userId)); // Konwersja na string
         await AsyncStorage.setItem('login', String(login)); // Konwersja na string
-  
         navigation.navigate('Home'); // Przejdź do strony głównej
       } else {
         setErrorMessage('Invalid username or password'); // Komunikat o błędzie
@@ -72,7 +71,7 @@ const Login: React.FC<Props> = ({ navigation }) => {
     >
       <View style={styles.container}>
         <Text style={styles.headerText}>Logowanie</Text>
-        {errorMessage !== '' && <Text style={styles.errorMessage}>{errorMessage}</Text>} {/* Wyświetlanie błędu */}
+        {errorMessage !== '' && <Text testID="errorMessage" style={styles.errorMessage}>{errorMessage}</Text>} {/* Wyświetlanie błędu */}
         <TextInput
           placeholder="Nazwa użytkownika"
           placeholderTextColor="#ccc"
@@ -101,6 +100,7 @@ const Login: React.FC<Props> = ({ navigation }) => {
     </ImageBackground>
   );
 };
+
 
 const styles = StyleSheet.create({
   background: {

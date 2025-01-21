@@ -53,7 +53,6 @@ const Rzeszow = () => {
           <Text style={styles.linkText}>Strona główna Okręgu Rzeszów</Text>
         </TouchableOpacity>
 
-        <Text style={styles.subtitle}>Zbiorniki wodne w okręgu Rzeszów:</Text>
         {reservoirs.map((reservoir) => (
           <View key={reservoir.id} style={styles.infoBox}>
             <Text style={styles.infoText}>

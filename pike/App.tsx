@@ -11,8 +11,6 @@ import Wetter from './_Page/_Wetter/Wetter';
 import Login from './_Page/_LoginRegistery/_Login/Login';
 import Registry from './_Page/_LoginRegistery/_Registery/Registery';
 import Fishing_Maps from './_Page/_Lake/_PZW/_PZWMaps/PZWMaps';
-import Podk from './_Page/_Lake/_PZW/_Woje/Podkarpackie';
-import WebsiteUnderCon from './_Page/_Lake/_PZW/_Woje/WebstieUnderConstr';
 import WaterTypeChoice from './_Page/_Lake/WaterTypeChoice/WaterTypeChoice ';
 import FishingMapsCom from './_Page/_Lake/_Commercial/_CommercialMaps/CommercialMaps';
 import PodkarpackieCom from './_Page/_Lake/_Commercial/_Lakes/_Podkarpackie/PodkarpackieCom';
@@ -75,6 +73,61 @@ import Trzebiatki from './_Page/_Lake/_Commercial/_Lakes/_Pomorskie/_Trzebiatki/
 import Szuwarek from './_Page/_Lake/_Commercial/_Lakes/_Pomorskie/_Szuwarek/Szuwarek';
 import CzarDa from './_Page/_Lake/_Commercial/_Lakes/_Pomorskie/_Czarda/Czarda';
 import SlaskieCom from './_Page/_Lake/_Commercial/_Lakes/_Slaskie/SlaskieCom';
+import Praszczyki from './_Page/_Lake/_Commercial/_Lakes/_Slaskie/_Praszczyki/Praszczyki';
+import NowaOchaby from './_Page/_Lake/_Commercial/_Lakes/_Slaskie/_NowaOchaby/NowaOchaby';
+import Harus from './_Page/_Lake/_Commercial/_Lakes/_Slaskie/_Harus/Harus';
+import MalaOlza from './_Page/_Lake/_Commercial/_Lakes/_Slaskie/_MalaOlza/MalaOlza';
+import SwietokrzyskieCom from './_Page/_Lake/_Commercial/_Lakes/_Swietokrzyskie/SwietokrzyskieCom';
+import BigFishLake from './_Page/_Lake/_Commercial/_Lakes/_Swietokrzyskie/_BigFishLake/BigFishLake';
+import Pstragal from './_Page/_Lake/_Commercial/_Lakes/_Swietokrzyskie/_Pstragal/Pstragal';
+import Bilowka from './_Page/_Lake/_Commercial/_Lakes/_Swietokrzyskie/_Bilowka/Bilowka';
+import Rytwiany from './_Page/_Lake/_Commercial/_Lakes/_Swietokrzyskie/_Rytwiany/Rytwiany';
+import WarminskoMazurskieCom from './_Page/_Lake/_Commercial/_Lakes/_WarminskoMazurskie/WarminskoMazurskieCom';
+import PikeLake from './_Page/_Lake/_Commercial/_Lakes/_WarminskoMazurskie/_PikeLake/PikeLake';
+import Pieczarki from './_Page/_Lake/_Commercial/_Lakes/_WarminskoMazurskie/_Pieczarki/Pieczarki';
+import Judziki from './_Page/_Lake/_Commercial/_Lakes/_WarminskoMazurskie/_Judziki/Judziki';
+import Zakrzewko from './_Page/_Lake/_Commercial/_Lakes/_WarminskoMazurskie/_Zakrzewko/Zakrzewko';
+import WielkopolskieCom from './_Page/_Lake/_Commercial/_Lakes/_Wielkopolskie/WielkopolskieCom';
+import ZachodnioPomorskieCom from './_Page/_Lake/_Commercial/_Lakes/_ZachodnioPomorskie/ZachodnioPomorskieCom';
+import Brynka from './_Page/_Lake/_Commercial/_Lakes/_Wielkopolskie/_Brynka/Brynka';
+import Prusim from './_Page/_Lake/_Commercial/_Lakes/_Wielkopolskie/_Prusim/Prusim';
+import Folusz from './_Page/_Lake/_Commercial/_Lakes/_Wielkopolskie/_Folusz/Folusz';
+import Orle from './_Page/_Lake/_Commercial/_Lakes/_Wielkopolskie/_Orle/Orle';
+import Lutowko from './_Page/_Lake/_Commercial/_Lakes/_ZachodnioPomorskie/_Lutowko/Lutowko';
+import Rezerwat from './_Page/_Lake/_Commercial/_Lakes/_ZachodnioPomorskie/_Rezerwat/Rezerwat';
+import Golczewo from './_Page/_Lake/_Commercial/_Lakes/_ZachodnioPomorskie/_Golczewo/Golczewo';
+import KaraibyStojkowo from './_Page/_Lake/_Commercial/_Lakes/_ZachodnioPomorskie/_KaraibyStojkowo/KaraibyStojkowo';
+import Szczecin from './_Page/_Lake/_PZW/_Woje/_Szczecin/Szczecin';
+import Koszalin from './_Page/_Lake/_PZW/_Woje/_Koszalin/Koszalin';
+import GorzowWielkopolski from './_Page/_Lake/_PZW/_Woje/GorzowWielkopolski/GorzowWielkopolski';
+import ZielonaGora from './_Page/_Lake/_PZW/_Woje/_ZielonaGora/ZielonaGora';
+import Poznan from './_Page/_Lake/_PZW/_Woje/_Poznan/Poznan';
+import JeleniaGora from './_Page/_Lake/_PZW/_Woje/_JeleniaGora/JeleniaGora';
+import Walbrzych from './_Page/_Lake/_PZW/_Woje/_Walbrzych/Walbrzych';
+import Legnica from './_Page/_Lake/_PZW/_Woje/_Legnica/Legnica';
+import Slupsk from './_Page/_Lake/_PZW/_Woje/_Slupsk/Slupsk';
+import Gdansk from './_Page/_Lake/_PZW/_Woje/_Gdansk/Gdansk';
+import Bydgoszcz from './_Page/_Lake/_PZW/_Woje/_Bydgoszcz/Bydgoszcz';
+import Konin from './_Page/_Lake/_PZW/_Woje/_Konin/Konin';
+import Kalisz from './_Page/_Lake/_PZW/_Woje/_Kalisz/Kalisz';
+import Opole from './_Page/_Lake/_PZW/_Woje/_Opole/Opole';
+import Elblag from './_Page/_Lake/_PZW/_Woje/_Elblag/Elblag';
+import Olsztyn from './_Page/_Lake/_PZW/_Woje/_Olsztyn/Olsztyn';
+import Suwalki from './_Page/_Lake/_PZW/_Woje/_Suwalki/Suwalki';
+import Bialystok from './_Page/_Lake/_PZW/_Woje/_Bialystok/Bialystok';
+import Torun from './_Page/_Lake/_PZW/_Woje/_Torun/Torun';
+import Ciechanow from './_Page/_Lake/_PZW/_Woje/_Ciechanow/Ciechanow';
+import Mazowieckie from './_Page/_Lake/_PZW/_Woje/_Mazowieckie/Mazowieckie';
+import BialaPodlaska from './_Page/_Lake/_PZW/_Woje/_BialaPodlaska/BialaPodlaska';
+import Siedlce from './_Page/_Lake/_PZW/_Woje/_Siedlce/Siedlce';
+import Sieradz from './_Page/_Lake/_PZW/_Woje/_Sieradz/Sieradz';
+import PiotrkowTrybunalski from './_Page/_Lake/_PZW/_Woje/_PiotrkowTrybunalski/PiotrkowTrybunalski';
+import Radom from './_Page/_Lake/_PZW/_Woje/_Radom/Radom';
+import Lublin from './_Page/_Lake/_PZW/_Woje/_Lublin/Lublin';
+import Chelm from './_Page/_Lake/_PZW/_Woje/_Chełm/Chełm';
+import Czestochowa from './_Page/_Lake/_PZW/_Woje/_Czestochowa/Czestochowa';
+import Kielce from './_Page/_Lake/_PZW/_Woje/_Kielce/Kielca';
+import Zamosc from './_Page/_Lake/_PZW/_Woje/_Zamosc/Zamosc';
 
 const Stack = createStackNavigator();
 
@@ -100,8 +153,6 @@ const App = () => {
         <Stack.Screen name="Wetter" component={Wetter} />
         <Stack.Screen name="Login" component={Login} />
         <Stack.Screen name="Registry" component={Registry} />
-        <Stack.Screen name="Podkarpackie" component={Podk} />
-        <Stack.Screen name="Website" component={WebsiteUnderCon} />
         <Stack.Screen name="WaterType" component={WaterTypeChoice} />
         <Stack.Screen name="FishCom" component={FishingMapsCom} />
         <Stack.Screen name="PodkarpakieCom" component={PodkarpackieCom} />
@@ -165,10 +216,64 @@ const App = () => {
         <Stack.Screen name="Szuwarek" component={Szuwarek} />
         <Stack.Screen name="Czarda" component={CzarDa} />
         <Stack.Screen name="SlaskieCom" component={SlaskieCom} />
+        <Stack.Screen name="Praszczyki" component={Praszczyki} />
+        <Stack.Screen name="Harus" component={Harus} />
+        <Stack.Screen name="NowaOchaby" component={NowaOchaby} />
+        <Stack.Screen name="MalaOlza" component={MalaOlza} />
+        <Stack.Screen name="SwietokrzyskieCom" component={SwietokrzyskieCom} />
+        <Stack.Screen name="BigFishLake" component={BigFishLake} />
+        <Stack.Screen name="Pstragal" component={Pstragal} />
+        <Stack.Screen name="Bilowka" component={Bilowka} />
+        <Stack.Screen name="Rytwiany" component={Rytwiany} />
+        <Stack.Screen name="WarminskoMazurskieCom" component={WarminskoMazurskieCom} />
+        <Stack.Screen name="PikeLake" component={PikeLake} />
+        <Stack.Screen name="Pieczarki" component={Pieczarki} />
+        <Stack.Screen name="Judziki" component={Judziki} />
+        <Stack.Screen name="Zakrzewo" component={Zakrzewko} />
+        <Stack.Screen name="WielkopolskieCom" component={WielkopolskieCom} />
+        <Stack.Screen name="ZachodnioPomorskieCom" component={ZachodnioPomorskieCom} />
+        <Stack.Screen name="Brynka" component={Brynka} />
+        <Stack.Screen name="Prusim" component={Prusim} />
+        <Stack.Screen name="Folusz" component={Folusz} />
+        <Stack.Screen name="Orle" component={Orle} />
+        <Stack.Screen name="Lutowko" component={Lutowko} />
+        <Stack.Screen name="Rezerwat" component={Rezerwat} />
+        <Stack.Screen name="Golczewo" component={Golczewo} />
+        <Stack.Screen name="KaraibyStojkowo" component={KaraibyStojkowo} />
+        <Stack.Screen name="Szczecin" component={Szczecin} />
+        <Stack.Screen name="Koszalin" component={Koszalin} />
+        <Stack.Screen name="GorzowWielkopolski" component={GorzowWielkopolski} />
+        <Stack.Screen name="ZielonaGora" component={ZielonaGora} />
+        <Stack.Screen name="Poznan" component={Poznan} />
+        <Stack.Screen name="JeleniaGora" component={JeleniaGora} />
+        <Stack.Screen name="Walbrzych" component={Walbrzych} />
+        <Stack.Screen name="Legnica" component={Legnica} />
+        <Stack.Screen name="Slupsk" component={Slupsk} />
+        <Stack.Screen name="Gdansk" component={Gdansk} />
+        <Stack.Screen name="Bydgoszcz" component={Bydgoszcz} />
+        <Stack.Screen name="Konin" component={Konin} />
+        <Stack.Screen name="Kalisz" component={Kalisz} />
+        <Stack.Screen name="Opole" component={Opole} />
+        <Stack.Screen name="Elblag" component={Elblag} />
+        <Stack.Screen name="Olsztyn" component={Olsztyn} />
+        <Stack.Screen name="Suwalki" component={Suwalki} />
+        <Stack.Screen name="Bialystok" component={Bialystok} />
+        <Stack.Screen name="Torun" component={Torun} />
+        <Stack.Screen name="Ciechanow" component={Ciechanow} />
+        <Stack.Screen name="Mazowieckie" component={Mazowieckie} />
+        <Stack.Screen name="BialaPodlaska" component={BialaPodlaska} />
+        <Stack.Screen name="Siedlce" component={Siedlce} />
+        <Stack.Screen name="Sieradz" component={Sieradz} />
+        <Stack.Screen name="PiotrkowTrybunalski" component={PiotrkowTrybunalski} />
+        <Stack.Screen name="Radom" component={Radom} />
+        <Stack.Screen name="Lublin" component={Lublin} />
+        <Stack.Screen name="Chełm" component={Chelm} />
+        <Stack.Screen name="Czestochowa" component={Czestochowa} />
+        <Stack.Screen name="Kielce" component={Kielce} />
+        <Stack.Screen name="Zamosc" component={Zamosc} />
 
 
-
-
+        
 
 
 
